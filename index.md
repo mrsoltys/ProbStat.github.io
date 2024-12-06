@@ -38,9 +38,30 @@ Measures of Center
 
 ### Mean
 
+The sum of all data points divided by the number of points. It represents the 'balance point' of the data, and is especially meaningful if the data is follows a _normal distribution_.
+
+$$\mu=\frac{\sum x_i}{n}$$
+
+
+Where:
+
+
+$$x_i$$: Each data point
+$$n$$: Number of data points
+
+
 ### Median
 
+The middle value in a dataset when arranged in ascending order. If the number of data points is even, the median is the average of the two middle values. The median corresponds to the value at the 2nd quartile (50th percentile).
+
+Example: For the dataset [2, 3, 7], the median is 3. For [2, 3, 7, 8], the median is (3 + 7) / 2 = 5.
+
+
 ### Mode
+
+The most frequently occurring value(s) in a dataset.
+Example: For the dataset [1, 2, 2, 3, 4], the mode is 2. 
+
 
 Measures of Spread
 ---
