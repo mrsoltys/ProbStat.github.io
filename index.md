@@ -19,11 +19,37 @@ E.g., All possible hands in a game of blackjack, or the streamflow measurements 
 A subset of the population used to _infer_ information about the whole population.
 E.g., The peak annual streamflows for Boulder Creek over the past 100 years (as opposed to all possible years).
 
-> __ Almost _all_ datasets we encounter are _Samples_!__
+> _Most_ datasets we encounter are _Samples_!
 
 
 <iframe src="Figures/chi_squared_interactive.html" width="800" height="600"></iframe>
-> Figure: The blue line shows the PDF of the a Chi-Squared Distribution. The Orange bars represent a histogram from a sample population. Notice as the sample size increases, the histogram of the Sample looks more and more like the PDF from the population. A take home message from this is _small data sets can provide an innacurate view of the big picture!_
+> Figure: The blue line shows the PDF of a Chi-Squared Distribution (DF=4). The Orange bars represent a frequency histogram of randomly sampled values from the population. Notice as the sample size increases, the histogram of the __Sample__ looks more and more like the PDF of the __Population__. A take home message from this is _small data sets can provide an innacurate view of the big picture!_
+
+Summary Statistics
+==================
+When describing a friend, you might use a few generalized terms to simplify their whole being into a few adjectives. (_He_'s got _white glasses_ and _thin_ build.)
+
+Similarly we describe large data sets with __summary statistics__ to give us a general idea of the shape of the data. These statistics include:
+
+Measures of Center
+----
+<iframe src="Figures/chi_squared_pdf_corrected_mode.html" width="800" height="600"></iframe>
+> The _Mean_, _Median_, and _Mode_ all different ways to estimate the center of a data set. They all come with their strengths and weaknesses.
+
+### Mean
+
+### Median
+
+### Mode
+
+Measures of Spread
+---
+
+### Standard Deviation
+
+### Inter Quartile Range (IQR)
+
+### Max / Min
 
 Data Types
 ==========
