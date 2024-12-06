@@ -23,7 +23,7 @@ E.g., The peak annual streamflows for Boulder Creek over the past 100 years (as 
 
 
 <iframe src="Figures/chi_squared_interactive.html" width="800" height="600"></iframe>
-
+> Figure: The blue line shows the PDF of the a Chi-Squared Distribution. The Orange bars represent a histogram from a sample population. Notice as the sample size increases, the histogram of the Sample looks more and more like the PDF from the population. A take home message from this is _small data sets can provide an innacurate view of the big picture!_
 
 Data Types
 ==========
