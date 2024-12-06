@@ -19,6 +19,12 @@ E.g., All possible hands in a game of blackjack, or the streamflow measurements 
 A subset of the population used to _infer_ information about the whole population.
 E.g., The peak annual streamflows for Boulder Creek over the past 100 years (as opposed to all possible years).
 
+> __ Almost _all_ datasets we encounter are _Samples_!__
+
+
+<iframe src="Figures/chi_squared_interactive.html" width="800" height="600"></iframe>
+
+
 Data Types
 ==========
 Understanding data types is crucial for selecting appropriate statistical methods and visualizations.
