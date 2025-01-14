@@ -3,10 +3,6 @@ layout: default
 title: Probability and Statistics Guide
 ---
 
-
-Hello World
-===========
-
 Population Vs. Sample
 =====================
 
