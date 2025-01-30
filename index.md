@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Probability and Statistics Guide
-toc: true
+toc: false
 ---
 Intro To Statistics
 ===================
