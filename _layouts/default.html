@@ -8,6 +8,12 @@
   </head>
   <body>
     {% include navigation.html %}
+    {% if page.toc %}
+    <nav id="toc">
+        <h3>Table of Contents</h3>
+        {{ content | toc }}
+    </nav>
+    {% endif %}
     {{ content }}
   </body>
 </html>

@@ -61,3 +61,34 @@ a {
 a:hover {
     color: #2aa198; /* Solarized Cyan */
 }
+
+#toc {
+    position: fixed;
+    top: 100px;
+    left: 20px;
+    width: 250px;
+    background-color: #eee8d5; /* Solarized Base2 */
+    padding: 10px;
+    border-radius: 5px;
+    border-left: 4px solid #268bd2; /* Solarized Blue */
+    font-size: 0.9em;
+}
+
+#toc h3 {
+    margin-top: 0;
+    color: #073642; /* Solarized Base02 */
+}
+
+#toc ul {
+    list-style: none;
+    padding-left: 10px;
+}
+
+#toc ul li a {
+    text-decoration: none;
+    color: #268bd2; /* Solarized Blue */
+}
+
+#toc ul li a:hover {
+    color: #2aa198; /* Solarized Cyan */
+}
