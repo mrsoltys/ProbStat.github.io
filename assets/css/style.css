@@ -1,0 +1,63 @@
+/* Solarized Theme */
+body {
+    background-color: #eee8d5; /* Base2 */
+    color: #073642; /* Base02 */
+    font-family: "Arial", sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+/* Navigation Menu */
+nav {
+    background-color: #073642; /* Base02 */
+    padding: 10px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #eee8d5; /* Base2 */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    color: #268bd2; /* Solarized Blue */
+}
+
+/* Header Spacing (to prevent content being hidden under fixed nav) */
+h2, h3, h4 {
+    margin-top: 80px; 
+}
+
+/* Main Content */
+main {
+    max-width: 800px;
+    margin: 100px auto 20px;
+    padding: 20px;
+}
+
+/* Links */
+a {
+    color: #268bd2;
+    text-decoration: none;
+}
+a:hover {
+    color: #2aa198; /* Solarized Cyan */
+}
