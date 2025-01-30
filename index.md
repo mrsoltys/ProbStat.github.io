@@ -37,7 +37,7 @@ If a sample is **random and representative**, we can make **inferences** about t
 
 > _Most_ datasets we encounter are _Samples_!
 
-##Example
+## Example
 <iframe src="Figures/chi_squared_interactive.html" width="800" height="600"></iframe>
 > **Figure:** The **purple line** represents the **Probability Density Function (PDF)** of a **Chi-Squared distribution** with **4 degrees of freedom (DF=4)**. The **orange bars** show a **frequency histogram** of randomly sampled values from the population.
 
@@ -113,7 +113,7 @@ Example:
 - For \([1, 2, 3, 4]\), there is **no mode**.
 
 ---
-![Visualizing Different Measures of Center](Figures/visualizing_measures_of_center.png)
+<iframe src="Figures/visualizing_measures_of_center.html" width="800" height="600"></iframe>
 
 > **Figure** The _Mean_, _Median_, and _Mode_ are all different ways to estimate the center of a data set. They all come with their strengths and weaknesses.
 
@@ -177,7 +177,7 @@ The **interquartile range (IQR)** measures the spread of the middle 50% of the d
 A higher IQR means more variability in the middle of the dataset.
 
 ---
-![Box and Whisker Plot with Swarm Representation](Figures/box_and_whisker_plot.png)
+<iframe src="Figures/box_and_whisker_plot.html" width="800" height="600"></iframe>
 
 > **Figure** This is another visualization of the same data shown above. The box plot and swarm plot both help visualize the spread of the data and highlight any outliers. The box plot summarizes the distribution using quartiles, while the swarm plot shows individual data points, making it easier to see clustering and deviations.
 
