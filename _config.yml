@@ -1,0 +1,24 @@
+title: "Dr Soltys Data Analysis and Measurments page"
+description: "A site using the Solarized theme with in-page navigation"
+baseurl: "/ProbStat.github.io" # Set this if using GitHub Pages with a repo name (e.g., "/myrepo")
+url: "https://mrsoltys.github.io" # Change to your actual GitHub Pages URL
+
+# Markdown processing settings
+markdown: kramdown
+kramdown:
+  toc_levels: 2..4  # Generates a Table of Contents for h2, h3, and h4 headers
+
+# Theme settings (if you're using a Jekyll theme, specify it here)
+theme: minima  # Change or remove if using a custom theme
+
+# Include assets in the build
+include:
+  - assets/css
+  - assets/js
+
+# Exclude files from being processed
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
