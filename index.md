@@ -126,33 +126,89 @@ Using these together helps create a complete picture of the dataset.
 
 > **Figure** The _Mean_, _Median_, and _Mode_ are all different ways to estimate the center of a data set. They all come with their strengths and weaknesses.
 
-
-Measures of Spread
 ---
 
-### Standard Deviation
+# Measures of Spread
 
-### Inter Quartile Range (IQR)
+While **measures of center** (mean, median, mode) give us a single representative value for a dataset, they don’t tell us how **spread out** the data is. Two datasets can have the same mean but vastly different distributions. **Measures of spread** help us understand variability and distribution.
 
-### Max / Min
+---
 
-Data Types
-==========
-Understanding data types is crucial for selecting appropriate statistical methods and visualizations.
+## Range (Min/Max)
+The **range** is the difference between the maximum and minimum values in a dataset.
 
-## Continuous Data
-Quantitative Data that can take any value within a range. Examples: Streamflow measurements, temperature.
-## Discrete Data
-Quantitative Data that can take only specific values, often counted as whole numbers. Examples: Number of cards in a hand, number of students in a class.
-## Ordinal Data
-Categorical Data with a specific order but no consistent difference between categories. Examples: Rankings, customer satisfaction levels, T-shirt sizes (Small, Medium, Large)
-## Nominal Data
-Categorical Data without a specific order. Examples: Types of playing cards (hearts, diamonds, etc.), colors.
+\[
+\text{Range} = \text{Max} - \text{Min}
+\]
+
+- **Max**: The largest value in the dataset.
+- **Min**: The smallest value in the dataset.
 
 
+The range provides a simple sense of spread but can be **misleading** if the dataset contains outliers.
+
+---
+
+## Standard Deviation (σ)
+The **standard deviation** measures how much individual data points deviate from the mean. A higher standard deviation means the data is more spread out.
+
+\[
+\sigma = \sqrt{\frac{\sum (x_i - \mu)^2}{n}}
+\]
+
+Where:
+- \( x_i \) = Each data point
+- \( \mu \) = Mean of the dataset
+- \( n \) = Number of data points
+
+---
 
 
+## Percentiles
+A **percentile** indicates the relative standing of a value in a dataset.
 
-$$ \int_{-\infty}^{\infty} P(X) dX$$
+- The **p-th percentile** is the value below which **p%** of the data falls.
+- The **50th percentile** is the **median**.
+- The **25th percentile** is \( Q_1 \) and the **75th percentile** is \( Q_3 \).
+
+**Example:**
+- If a test score is in the **90th percentile**, it means **90%** of test-takers scored lower.
+
+---
+
+## Interquartile Range (IQR)
+The **interquartile range (IQR)** measures the spread of the middle 50% of the data, making it useful for datasets with outliers.
+
+\[
+\text{IQR} = Q_3 - Q_1
+\]
+
+- **\(Q_1\) (1st quartile):** The median of the lower half of the data (25th percentile).
+- **\(Q_3\) (3rd quartile):** The median of the upper half of the data (75th percentile).
+- **IQR** represents the middle 50% of the data.
+
+
+A higher IQR means more variability in the middle of the dataset.
+
+---
+
+## Summary of Measures of Spread
+
+| Measure        | Definition | Strengths | Weaknesses |
+|---------------|------------|------------|-------------|
+| **Range** | Max - Min | Simple to calculate | Sensitive to outliers |
+| **Standard Deviation** | Avg. deviation from mean | Uses all data points | Affected by outliers |
+| **Interquartile Range (IQR)** | Spread of middle 50% of data | Less affected by outliers | Ignores extreme values |
+
+---
+
+### Why These Measures Matter
+- **Standard deviation** is best when data is **normally distributed**.
+- **IQR** is better when the data has **outliers** or is **skewed**.
+- **Percentiles** are useful for ranking and comparisons.
+
+By combining these measures, we get a more complete picture of how data is distributed.
+
+
 
 
