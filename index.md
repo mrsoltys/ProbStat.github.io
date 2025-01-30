@@ -46,42 +46,85 @@ If a sample is **random and representative**, we can make **inferences** about t
 > A key takeaway: **_Small data sets can provide an inaccurate view of the big picture!_**
 
 
-Summary Statistics
-==================
-When describing a friend, you might use a few generalized terms to simplify their whole being into a few adjectives. (_He_'s got _white glasses_ and _thin_ build.)
+# Summary Statistics
 
-Similarly we describe large data sets with __summary statistics__ to give us a general idea of the shape of the data. These statistics include:
+When describing a friend, you might use a few generalized terms to simplify their whole being into a few adjectives. (_He_ has _white glasses_ and a _thin_ build.)
 
-Measures of Center
-----
-<iframe src="Figures/chi_squared_pdf_corrected_mode.html" width="800" height="600"></iframe>
-> The _Mean_, _Median_, and _Mode_ all different ways to estimate the center of a data set. They all come with their strengths and weaknesses.
+Similarly, we describe large datasets with **summary statistics** to provide a general idea of the shape and distribution of the data. These statistics include **measures of center**, which summarize the dataset with a single representative value.
 
-### Mean
+---
 
-The sum of all data points divided by the number of points. It represents the 'balance point' of the data, and is especially meaningful if the data is follows a _normal distribution_.
+## Measures of Center
 
-$$\mu=\frac{\sum x_i}{n}$$
+### Mean (Arithmetic Average)
 
+The **mean** is the sum of all data points divided by the number of points. It represents the **balance point** of the data and is especially meaningful if the data follows a **normal distribution**.
+
+\[
+\mu = \frac{\sum x_i}{n}
+\]
 
 Where:
+- \( x_i \) = Each data point  
+- \( n \) = Number of data points  
 
+Example:
 
-$$x_i$$: Each data point
-$$n$$: Number of data points
+For the dataset \([2, 4, 6, 8]\):
 
+\[
+\mu = \frac{2+4+6+8}{4} = \frac{20}{4} = 5
+\]
 
-### Median
+The mean is **5**.
 
-The middle value in a dataset when arranged in ascending order. If the number of data points is even, the median is the average of the two middle values. The median corresponds to the value at the 2nd quartile (50th percentile).
+---
 
-Example: For the dataset [2, 3, 7], the median is 3. For [2, 3, 7, 8], the median is (3 + 7) / 2 = 5.
+### Median (Middle Value)
 
+The **median** is the middle value in a dataset when arranged in ascending order. If the number of data points is even, the median is the average of the two middle values.
 
-### Mode
+- The **median** corresponds to the **2nd quartile (50th percentile)**, meaning half the values are below it, and half are above it.
 
-The most frequently occurring value(s) in a dataset.
-Example: For the dataset [1, 2, 2, 3, 4], the mode is 2. 
+Example:
+
+- For the dataset \([2, 3, 7]\), the median is **3**.
+- For the dataset \([2, 3, 7, 8]\), the median is:
+
+\[
+\frac{3 + 7}{2} = 5
+\]
+
+The median is **5**.
+
+---
+
+### Mode (Most Frequent Value)
+
+The **mode** is the most frequently occurring value(s) in a dataset. A dataset can have:
+- **One mode** (unimodal)
+- **Multiple modes** (bimodal or multimodal)
+- **No mode** (if all values occur with equal frequency)
+
+Example:
+
+- For the dataset \([1, 2, 2, 3, 4]\), the mode is **2** (since it appears most frequently).
+- For the dataset \([1, 1, 2, 2, 3]\), the modes are **1 and 2** (bimodal).
+- For \([1, 2, 3, 4]\), there is **no mode**.
+
+---
+
+#### Why These Measures Matter
+Each measure of center tells us something different about the data:
+- **Mean** is useful for normally distributed data but is sensitive to outliers.
+- **Median** is robust against outliers and skewed data.
+- **Mode** is helpful for identifying common values or categorical data trends.
+
+Using these together helps create a complete picture of the dataset.
+
+![Visualizing Different Measures of Center](visualizing_measures_of_center.png)
+
+> **Figure** The _Mean_, _Median_, and _Mode_ are all different ways to estimate the center of a data set. They all come with their strengths and weaknesses.
 
 
 Measures of Spread
