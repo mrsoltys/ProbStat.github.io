@@ -113,6 +113,10 @@ Example:
 - For \([1, 2, 3, 4]\), there is **no mode**.
 
 ---
+![Visualizing Different Measures of Center](Figures/visualizing_measures_of_center.png)
+
+> **Figure** The _Mean_, _Median_, and _Mode_ are all different ways to estimate the center of a data set. They all come with their strengths and weaknesses.
+
 
 #### Why These Measures Matter
 Each measure of center tells us something different about the data:
@@ -121,11 +125,6 @@ Each measure of center tells us something different about the data:
 - **Mode** is helpful for identifying common values or categorical data trends.
 
 Using these together helps create a complete picture of the dataset.
-
-![Visualizing Different Measures of Center](visualizing_measures_of_center.png)
-
-> **Figure** The _Mean_, _Median_, and _Mode_ are all different ways to estimate the center of a data set. They all come with their strengths and weaknesses.
-
 ---
 
 # Measures of Spread
@@ -163,19 +162,6 @@ Where:
 
 ---
 
-
-## Percentiles
-A **percentile** indicates the relative standing of a value in a dataset.
-
-- The **p-th percentile** is the value below which **p%** of the data falls.
-- The **50th percentile** is the **median**.
-- The **25th percentile** is \( Q_1 \) and the **75th percentile** is \( Q_3 \).
-
-**Example:**
-- If a test score is in the **90th percentile**, it means **90%** of test-takers scored lower.
-
----
-
 ## Interquartile Range (IQR)
 The **interquartile range (IQR)** measures the spread of the middle 50% of the data, making it useful for datasets with outliers.
 
@@ -191,6 +177,9 @@ The **interquartile range (IQR)** measures the spread of the middle 50% of the d
 A higher IQR means more variability in the middle of the dataset.
 
 ---
+![Box and Whisker Plot with Swarm Representation](Figures/box_and_whisker_plot.png)
+
+> **Figure** This is another visualization of the same data shown above. The box plot and swarm plot both help visualize the spread of the data and highlight any outliers. The box plot summarizes the distribution using quartiles, while the swarm plot shows individual data points, making it easier to see clustering and deviations.
 
 ## Summary of Measures of Spread
 
@@ -205,9 +194,10 @@ A higher IQR means more variability in the middle of the dataset.
 ### Why These Measures Matter
 - **Standard deviation** is best when data is **normally distributed**.
 - **IQR** is better when the data has **outliers** or is **skewed**.
-- **Percentiles** are useful for ranking and comparisons.
+
 
 By combining these measures, we get a more complete picture of how data is distributed.
+
 
 
 
