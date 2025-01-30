@@ -2,24 +2,49 @@
 layout: default
 title: Probability and Statistics Guide
 ---
+Intro To Statistics
+===================
+Statistics helps us make sense of the world around us. Because collecting data from an entire **population** is often impractical or impossible, we typically analyze a **sample**—a smaller, representative subset of the whole.
 
-Population Vs. Sample
-=====================
+## Population
+The **population** is the entire set of individuals, events, or objects that could be studied or observed.
 
-### Population
+- **Examples:**
+  - All possible hands in a game of blackjack.
+  - Every recorded streamflow measurement in Boulder Creek’s history.
+  - The heights of all adults in the United States.
 
-The entire set of items or outcomes that can be studied or observed.
-E.g., All possible hands in a game of blackjack, or the streamflow measurements for all years in Boulder Creek’s history. It is rare that we have the entire population to study, so more often we look at the Sample
+In most real-world cases, studying the **entire** population is too costly, time-consuming, or impractical, so we rely on **samples**.
 
-### Sample
-A subset of the population used to _infer_ information about the whole population.
-E.g., The peak annual streamflows for Boulder Creek over the past 100 years (as opposed to all possible years).
+## Sample
+A **sample** is a subset of the population, carefully chosen to infer information about the entire group.
+
+- **Examples:**
+  - The peak annual streamflows for Boulder Creek over the past 100 years (instead of all possible years).
+  - A survey of 1,000 voters to estimate the opinions of an entire country.
+  - A quality control test on a batch of 50 microchips from a production run of 10,000.
+
+Since **most** datasets we encounter are **samples**, it is crucial to use proper sampling methods to avoid bias and ensure the results accurately represent the population.
+
+### Why Sampling Matters
+If a sample is **random and representative**, we can make **inferences** about the larger population. However, poorly chosen samples can lead to **biased** results that misrepresent reality.
+
+#### Key Terms to Know:
+- **Parameter**: A numerical value that describes a characteristic of a population (e.g., the **true** average height of all adults in the U.S.).
+- **Statistic**: A numerical value that describes a characteristic of a sample (e.g., the average height based on a **sample** of 1,000 adults).
+- **Sampling Bias**: Errors that occur when a sample does not represent the population well (e.g., only surveying college students to estimate national opinions).
+
 
 > _Most_ datasets we encounter are _Samples_!
 
-
+##Example
 <iframe src="Figures/chi_squared_interactive.html" width="800" height="600"></iframe>
-> Figure: The blue line shows the PDF of a Chi-Squared Distribution (DF=4). The Orange bars represent a frequency histogram of randomly sampled values from the population. Notice as the sample size increases, the histogram of the __Sample__ looks more and more like the PDF of the __Population__. A take home message from this is _small data sets can provide an innacurate view of the big picture!_
+> **Figure:** The **purple line** represents the **Probability Density Function (PDF)** of a **Chi-Squared distribution** with **4 degrees of freedom (DF=4)**. The **orange bars** show a **frequency histogram** of randomly sampled values from the population.
+
+> As the **sample size increases**, the histogram of the **sample** more closely resembles the **PDF of the population**. Both the **population mean** and the **sample mean** are displayed: due to random variation, the sample mean may be close to or far from the population mean. However, as the **sample size grows**, the sample mean is more likely to **converge toward the population mean**.
+
+> A key takeaway: **_Small data sets can provide an inaccurate view of the big picture!_**
+
 
 Summary Statistics
 ==================
