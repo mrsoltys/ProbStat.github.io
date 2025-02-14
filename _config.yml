@@ -15,6 +15,7 @@ theme: minima  # Change or remove if using a custom theme
 include:
   - assets/css
   - assets/js
+  - _pages
 
 # Exclude files from being processed
 exclude:
