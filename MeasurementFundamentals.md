@@ -1,6 +1,6 @@
 ---
+layout: default
 title: Measurement Fundamentals
-permalink: /MeasurementFundamentals/
 ---
 
 Measurement Fundamentals
