@@ -22,9 +22,11 @@ Most digital data acquisition devices use an Analog to Digital converter (ADC), 
  * *Teensy 3.2* is an Arduino-based micro-controller with a ADC resolution of 13 bits (2^13=8192 unique possible bins).
  * *NI USB-6002* has a ADC resolution of 16 bits (2^16 = 65536 unique possible bins)
 
- Note: Just because an ADC boasts a high resolution, doesn't mean all that resolution will be usable. Sometimes factors like noise might limit the usable resolution of a device. 
+ Note: Just because an ADC boasts a high resolution, doesn't mean all that resolution will be usable. Sometimes factors like noise might limit the usable resolution of a device. Or, if you're using a device that only gives signals in the 0-3.3V range, you won't realize the full range capabilities of your device unless you amplify the signal
 
 ## Rate
+
+How fast you can take measurements. The is extremely important when frequency measures. As a general rule, your rate should be double that of the highest frequency.
 
 ## Types of Error in Measurement
 
