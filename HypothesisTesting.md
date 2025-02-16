@@ -25,10 +25,10 @@ The **One-Sample T-Test** is used to determine whether the mean of a single samp
 2. **Normality**: The sample should be drawn from a normally distributed population (approximately true for small samples; for larger samples, the **Central Limit Theorem** applies).
 
 ### Hypotheses:
-- **Null Hypothesis (\( H_0 \))**: The population mean is equal to the hypothesized mean.
-  \[
+- **Null Hypothesis $\( H_0 \)$**: The population mean is equal to the hypothesized mean.
+  $$
   H_0: \mu = \mu_0
-  \]
+  $$
 - **Alternative Hypothesis (\( H_a \))**:
   - **Two-tailed test**: The mean is different from the hypothesized value.
     \[
