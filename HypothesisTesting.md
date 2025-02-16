@@ -31,27 +31,27 @@ The **One-Sample T-Test** is used to determine whether the mean of a single samp
   $$
 - **Alternative Hypothesis (\( H_a \))**:
   - **Two-tailed test**: The mean is different from the hypothesized value.
-    \[
+    $$
     H_a: \mu \neq \mu_0
-    \]
+    $$
   - **Left-tailed test**: The mean is less than the hypothesized value.
-    \[
+    $$
     H_a: \mu < \mu_0
-    \]
+    $$
   - **Right-tailed test**: The mean is greater than the hypothesized value.
-    \[
+    $$
     H_a: \mu > \mu_0
-    \]
+    $$
 
 ### Formula:
-\[
+$$
 t = \frac{\bar{x} - \mu_0}{\frac{s}{\sqrt{n}}}
-\]
+$$
 Where:
-- \( \bar{x} \) = sample mean
-- \( \mu_0 \) = hypothesized population mean
-- \( s \) = sample standard deviation
-- \( n \) = sample size
+- $ \bar{x} $ = sample mean
+- $ \mu_0 $ = hypothesized population mean
+- $ s \) = sample standard deviation
+- $ n $ = sample size
 
 ### Example:
 A battery manufacturer claims that its batteries last **100 hours** on average. A sample of 10 batteries has a **mean lifespan of 95 hours** with a standard deviation of **8 hours**. We test:
