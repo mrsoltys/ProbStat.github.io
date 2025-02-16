@@ -94,7 +94,7 @@ $$
 
 Using a **t-table** with **df = n - 1 = 9** at $$ \alpha = 0.05 $$, (`=T.INV(0.05,9)`)we find the critical value is **-1.833**.
 
-#### Step 7
+#### Step 7: Conclusions
  Since **-1.975 < -1.833**, we **reject $$ H_0 $$** and conclude that **We Have Sufficient Statistical Evidence to Conclude that** the battery lifespan is significantly lower than 100 hours.
 
 ---
