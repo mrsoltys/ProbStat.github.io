@@ -29,7 +29,7 @@ The **One-Sample T-Test** is used to determine whether the mean of a single samp
   $$
   H_0: \mu = \mu_0
   $$
-- **Alternative Hypothesis $$\( H_a \)$$**:
+- **Alternative Hypothesis $$( H_a )$$**:
   - **Two-tailed test**: The mean is different from the hypothesized value.
     $$
     H_a: \mu \neq \mu_0
@@ -44,6 +44,7 @@ The **One-Sample T-Test** is used to determine whether the mean of a single samp
     $$
 
 ### Formula:
+
 $$
 t = \frac{\bar{x} - \mu_0}{\frac{s}{\sqrt{n}}}
 $$
@@ -55,9 +56,9 @@ Where:
 - $$ n $$ = sample size
 
 ### Example (Left-Tailed Test):
-A battery manufacturer claims that its batteries last **100 hours** on average. A sample of 10 batteries has a **mean lifespan of 95 hours** with a standard deviation of **8 hours**. We test:
-
+A battery manufacturer claims that its batteries last **100 hours** on average. A sample of 10 batteries has a **mean lifespan of 95 hours** with a standard deviation of **8 hours**. 
 #### Step 1: State Null and Alternative Hypothesis
+
 $$
 H_0: \mu = 100
 $$
@@ -82,14 +83,18 @@ $$
 
 Reject $$H_0$$ if p-value < a  
 
-OR use test statistic and critical values
+OR 
 
+use test statistic and critical values
 #### Step 6: Calculations
 
 $$
-t = \frac{95 - 100}{\frac{8}{\sqrt{10}}} = \frac{-5}{\frac{8}{3.162}} = \frac{-5}{2.53} = -1.975
+t = \frac{95 - 100}{\frac{8}{\sqrt{10}}} = -1.976
 $$
 
-Using a **t-table** with **df = n - 1 = 9** at $$ \alpha = 0.05 $$, we find the critical value is **-1.833**. Since **-1.975 < -1.833**, we **reject $$ H_0 $$** and conclude that the battery lifespan is significantly lower than 100 hours.
+Using a **t-table** with **df = n - 1 = 9** at $$ \alpha = 0.05 $$, (`=T.INV(0.05,9)`)we find the critical value is **-1.833**.
+
+#### Step 7
+ Since **-1.975 < -1.833**, we **reject $$ H_0 $$** and conclude that **We Have Sufficient Statistical Evidence to Conclude that** the battery lifespan is significantly lower than 100 hours.
 
 ---
