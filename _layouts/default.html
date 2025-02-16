@@ -5,11 +5,11 @@
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ page.title }}</title>
     <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+    <script src=”https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id=”MathJax-script” async src=”https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
   </head>
   <body>
     <script src="{{ '/assets/js/script.js' | relative_url }}"></script>
-    <script src=”https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-    <script id=”MathJax-script” async src=”https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     {% include navigation.html %}
     {% if page.toc %}
     <nav id="toc">
@@ -18,7 +18,7 @@
     </nav>
     {% endif %}
     {{ content }}
-
+ß
   </body>
 </html>
 
