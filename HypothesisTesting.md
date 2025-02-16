@@ -54,9 +54,10 @@ Where:
 - $$ s $$ = sample standard deviation
 - $$ n $$ = sample size
 
-### Example:
+### Example (Left-Tailed Test):
 A battery manufacturer claims that its batteries last **100 hours** on average. A sample of 10 batteries has a **mean lifespan of 95 hours** with a standard deviation of **8 hours**. We test:
 
+#### Step 1: State Null and Alternative Hypothesis
 $$
 H_0: \mu = 100
 $$
@@ -65,7 +66,25 @@ $$
 H_a: \mu < 100
 $$
 
-Using the formula:
+#### Step 2: State the Maximum Risk You Are Willing TO Accept of Committing A Type 1 ($$\alpha$$) error:
+
+$$\alpha=0.05$$
+
+#### Step 3: State the Test Statistics
+
+$$
+t = \frac{\bar{x} - \mu_0}{\frac{s}{\sqrt{n}}}
+$$
+
+#### Step 4: Identify the Random Sampling Distribution (RSD) of the Test Statistic When H0 Is True; and Whether This is an Exact or Approximate Test 
+
+#### Step 5: State the Critical Value for Rejecting the Null Hypothesis 
+
+Reject $$H_0$$ if p-value < a  
+
+OR use test statistic and critical values
+
+#### Step 6: Calculations
 
 $$
 t = \frac{95 - 100}{\frac{8}{\sqrt{10}}} = \frac{-5}{\frac{8}{3.162}} = \frac{-5}{2.53} = -1.975
