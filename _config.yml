@@ -6,7 +6,7 @@ url: "https://mrsoltys.github.io" # Change to your actual GitHub Pages URL
 # Markdown processing settings
 markdown: kramdown
 kramdown:
-  toc_levels: 2..4  # Generates a Table of Contents for h2, h3, and h4 headers
+  toc_levels: 2..3  # Generates a Table of Contents for h2, h3, and h4 headers
 
 # Theme settings (if you're using a Jekyll theme, specify it here)
 theme: minima  # Change or remove if using a custom theme
@@ -23,3 +23,6 @@ exclude:
   - Gemfile.lock
   - node_modules
   - vendor
+
+plugins:
+  - jekyll-toc

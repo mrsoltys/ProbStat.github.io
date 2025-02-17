@@ -14,13 +14,12 @@
     <script src="{{ '/assets/js/script.js' | relative_url }}"></script>
     {% include navigation.html %}
     {% if page.toc %}
-    <nav id="toc">
-        <h3>Table of Contents</h3>
-        {{ content | toc }}
+      <nav id="toc">
+      <h3>Table of Contents</h3>
+      {% include toc.html %}
     </nav>
     {% endif %}
     {{ content }}
-ß
   </body>
 </html>
 
