@@ -97,7 +97,7 @@ The test statistic for a one-sample t-test is: $$ t = \frac{\bar{x} - \mu_0}{\fr
 - **p-value approach**: Reject $$ H_0 $$ if p-value < $$\alpha$$.
 
 <div style="text-align: center;">
-  <img src="./Figures/oneTailedT-test.png" style="max-width: 90%; height: auto;">
+  <img src="./Figures/oneTailedT-test.png" style="max-width: 85%; height: auto;">
 </div>
 
 #### Step 6: Calculations
@@ -184,7 +184,7 @@ t < -1.887 \quad \text{or} \quad t > 1.887
 $$
 
 <div style="text-align: center;">
-  <img src="./Figures/twoTailedT-test.png" style="max-width: 90%; height: auto;">
+  <img src="./Figures/twoTailedT-test.png" style="max-width: 85%; height: auto;">
 </div>
 
 
@@ -295,14 +295,104 @@ Where:
 - $$ s_d $$ = standard deviation of the differences
 - $$ n $$ = number of pairs
 
-### Example:
-A coach measures the sprint times of 10 athletes before and after a training program. The **average improvement** (difference) is **-0.5 seconds**, with a **standard deviation of 0.3 seconds**.
+### Example: Paired Two-Sample T-Test (Sprint Time Improvement)
 
+A coach measures the sprint times of **10 athletes** before and after a training program. We want to test whether the **training program significantly improved sprint times** at a **5% significance level**.
+
+The **average improvement** (mean difference) is **-0.5 seconds**, with a **standard deviation of 0.3 seconds**.
+
+---
+
+#### **Step 1: State the Null and Alternative Hypotheses**
+Since we are testing whether the **training significantly improved sprint times**, we define:
+
+- **Null Hypothesis ($H_0$)**: There is no improvement in sprint times.
+  $$
+  H_0: \mu_d = 0
+  $$
+
+- **Alternative Hypothesis ($H_a$)**: The training **improves** sprint times (i.e., times are lower after training).
+  $$
+  H_a: \mu_d < 0
+  $$
+
+This is a **left-tailed test** since we expect the improvement (difference) to be **negative**.
+
+---
+
+#### **Step 2: State the Maximum Risk of a Type I Error ($\alpha$)**
+
+We set our **significance level** at:
+
+$$
+\alpha = 0.05
+$$
+
+This means we are willing to accept a **5% chance** of incorrectly rejecting \( H_0 \) when it is actually true.
+
+---
+
+#### **Step 3: State the Test Statistic**
+
+Since we are comparing **paired data** (before vs. after sprint times), we use a **paired t-test**, and the test statistic formula is:
+
+$$
+t = \frac{\bar{d}}{\frac{s_d}{\sqrt{n}}}
+$$
+
+Where:
+- $$ \bar{d} = -0.5 $$ (mean difference)
+- $$ s_d = 0.3 $$ (standard deviation of differences)
+- $$ n = 10 $$ (number of athletes)
+
+---
+
+## **Step 4: Identify the Random Sampling Distribution (RSD)**
+
+- The test statistic follows a **t-distribution** with **degrees of freedom**:$$ df = n - 1 = 10 - 1 = 9 $$
+- Since the sample size is small, we assume the differences are **approximately normally distributed**.
+
+---
+
+## **Step 5: Find the Critical Value**
+
+For a **left-tailed test** at \( \alpha = 0.05 \), we find the **critical value** from a t-table:
+
+$$
+t_{\text{critical}} = -1.833
+$$
+
+We will **reject \( H_0 \) if**:
+
+$$
+t < -1.833
+$$
+
+---
+
+## **Step 6: Compute the Test Statistic and p-value**
+
+### **Compute $t$-value:**
 $$
 t = \frac{-0.5}{\frac{0.3}{\sqrt{10}}} = \frac{-0.5}{0.095} = -5.26
 $$
 
-Using a **t-table** at \( \alpha = 0.05 \), the critical value for **df = 9** is **-2.262**. Since **-5.26 < -2.262**, we **reject \( H_0 \)**, concluding that the training significantly improved sprint times.
+### **Compute the p-value:**
+Using a **t-distribution table** or statistical software:
+
+$$
+p = P(T < -5.26) \approx 0.0002
+$$
+
+---
+
+## **Step 7: Conclusion**
+- **Critical value approach**: Since **\( t = -5.26 \) is less than \( t_{\text{critical}} = -1.833 \)**, we **reject \( H_0 \)**.
+- **p-value approach**: Since **\( p = 0.0002 < \alpha = 0.05 \)**, we also **reject \( H_0 \)**.
+
+
+At a **5% significance level**, we have Sufficient Statistical Evidence to Infer that the **training program improved sprint times**.
+
 
 
 
