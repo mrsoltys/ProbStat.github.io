@@ -4,6 +4,9 @@ title: Guide To Hypothesis Testing
 toc: true
 ---
 
+## Table of Contents
+{:toc}
+
 Guide to Hypothesis Testing
 ===========================
 
