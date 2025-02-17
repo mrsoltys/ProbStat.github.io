@@ -9,7 +9,7 @@ Guide to Hypothesis Testing
 Hypothesis testing is a fundamental statistical tool used to make inferences about a population based on sample data. In this class, we'll take a 7-step approach to hypothesis testing:
 ### Summary of the 7-Step Hypothesis Testing Process:
 1. **State the null and alternative hypotheses**.
-2. **Choose the significance level** \( \alpha \).
+2. **Choose the significance level ($$ \alpha $$)**.
 3. **Determine the appropriate test statistic**.
 4. **Identify the random sampling distribution (RSD)**.
 5. **Find the critical value** or decide to use a **p-value approach**.
@@ -23,7 +23,6 @@ Hypothesis testing is a fundamental statistical tool used to make inferences abo
 The **T-Test** is commonly used to test hypotheses about population means, particularly when the sample size is small and/or the population standard deviation is unknown.
 
 ---
-
 
 ## One-Sample T-Test
 
@@ -97,6 +96,10 @@ The test statistic for a one-sample t-test is: $$ t = \frac{\bar{x} - \mu_0}{\fr
 - **Critical value approach**: Reject $$ H_0 $$ if **$$ t $$ is less than** the critical value at $$ \alpha = 0.05 $$
 - **p-value approach**: Reject $$ H_0 $$ if p-value < $$\alpha$$.
 
+<div style="text-align: center;">
+  <img src="./Figures/oneTailedT-test.png" style="max-width: 90%; height: auto;">
+</div>
+
 #### Step 6: Calculations
 
 $$
@@ -107,10 +110,102 @@ Using a **one-tailed t-table** with **df = n - 1 = 9** at $$ \alpha = 0.05 $$, (
 
 Using a **one-tailed t-table** with **df = n - 1 = 9** at $$ t=-1.976$$, (`=T.DIST(B2,9,TRUE)``), we find the p-value is $$0.040$$
 
-![One-Tailed T-Test](./Figures/oneTailedT-test.png)
-
 
 #### Step 7: Conclusions
 Since **-1.976 < -1.833** and that **$$p=0.04 < \alpha =0.05 $$**, we **reject $$ H_0 $$** and conclude that **We Have Sufficient Statistical Evidence To Infer that** the battery lifespan is significantly lower than 100 hours.
 
----
+
+### Example (Two-Tailed T-Test):
+A fruit supplier claims that the average weight of apples in their orchard is **150 grams**. A researcher randomly samples **15 apples** and finds that the **sample mean weight** is **148 grams**, with a **sample standard deviation of 8 grams**.
+
+We want to test whether the **average weight of apples is significantly different from** 150 grams at a **significance level of \( \alpha = 0.08 \)**.
+
+#### Step 1: State the Null and Alternative Hypotheses
+We set up the hypotheses as follows:
+
+- **Null Hypothesis ($H_0$)**: The population mean is equal to 150 grams.
+  $$
+  H_0: \mu = 150
+  $$
+  
+- **Alternative Hypothesis ($H_a$)**: The population mean is **not** equal to 150 grams.
+  $$
+  H_a: \mu \neq 150
+  $$
+
+Since we are testing whether the mean **differs in either direction**, this is a **two-tailed test**.
+
+###### Step 2: State the Maximum Risk of a Type I Error ($\alpha$)
+
+We set our **significance level** at:
+
+$$
+\alpha = 0.08
+$$
+
+This means we are willing to accept an **8% chance** of incorrectly rejecting $$ H_0 $$ when it is actually true.
+
+## Step 3: State the Test Statistic
+
+The test statistic for a **one-sample t-test** is given by:
+
+$$
+t = \frac{\bar{x} - \mu_0}{\frac{s}{\sqrt{n}}}
+$$
+
+Where:
+- $$ \bar{x} = 145 $$ (sample mean)
+- $$ \mu_0 = 150 $$ (claimed population mean)
+- $$ s = 8 $$ (sample standard deviation)
+- $$ n = 15 $$ (sample size)
+
+#### Step 4: Identify the Random Sampling Distribution (RSD)
+
+- The **test statistic follows a t-distribution** with **degrees of freedom** $$ df = n - 1 = 15 - 1 = 14 $$
+- Since we are **sampling from a normal distribution or using the Central Limit Theorem (CLT) for a moderately large sample**, this is an **exact test**.
+
+#### Step 5: Find the Critical Values
+For a **two-tailed test** at \( \alpha = 0.08 \), we **split the significance level** across both tails:
+
+$$
+\frac{\alpha}{2} = 0.04
+$$
+
+Using a **t-table** or statistical function (`=T.INV.2T(0.08, 14)` OR `=T.INV(0.08/2, 14)` in Excel), we find:
+
+$$
+t_{\text{critical}} = \pm 1.887
+$$
+
+This means we **reject \( H_0 \) if**:
+
+$$
+t < -1.887 \quad \text{or} \quad t > 1.887
+$$
+
+<div style="text-align: center;">
+  <img src="./Figures/twoTailedT-test.png" style="max-width: 90%; height: auto;">
+</div>
+
+
+##### **Step 6: Compute the Test Statistic and p-value**
+ **Compute $t$-value:**
+$$
+t = \frac{148 - 150}{\frac{8}{\sqrt{15}}} =  -0.97
+$$
+
+### **Compute the p-value:**
+Using a **t-distribution table** or statistical software ('=T.DIST.2T(0.97,14)' OR '=T.DIST(-.97,14,TRUE)\*2'):
+
+$$
+p = 2 \times P(T < -.97)  = 0.35
+$$
+
+### **Step 7: Conclusion**
+- **Critical value approach**: Since **$$ t = -0.97 $$ is NOT less than $$ t_{\text{critical}} = -1.887  and is NOT greater than 1.887 $$**, we **fail to reject \( H_0 \)**.
+- **p-value approach**: Since **\( p = 0.35 > \alpha = 0.08 \)**, we **fail to reject \( H_0 \)**.
+
+At an **8% significance level**, we **do not have enough statistical evidence** to conclude that the **mean weight of apples is significantly different from 150 grams**.
+
+
+
