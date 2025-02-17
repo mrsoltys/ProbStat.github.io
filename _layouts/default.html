@@ -15,11 +15,15 @@
     {% include navigation.html %}
     {% if page.toc %}
       <nav id="toc">
-      <h3>Table of Contents</h3>
-      {% include toc.html %}
-    </nav>
+        <h3>Table of Contents</h3>
+        <ul>
+        {{ content | toc_only }}
+        </ul>
+      </nav>
     {% endif %}
+    <main>
     {{ content }}
+  </main>main>
   </body>
 </html>
 
