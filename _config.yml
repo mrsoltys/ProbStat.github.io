@@ -26,3 +26,6 @@ exclude:
 
 plugins:
   - jekyll-toc
+  toc:
+  min_level: 2 # default: 1
+  max_level: 5 # default: 6
