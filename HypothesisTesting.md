@@ -135,7 +135,7 @@ We set up the hypotheses as follows:
 
 Since we are testing whether the mean **differs in either direction**, this is a **two-tailed test**.
 
-###### Step 2: State the Maximum Risk of a Type I Error ($\alpha$)
+#### Step 2: State the Maximum Risk of a Type I Error ($\alpha$)
 
 We set our **significance level** at:
 
@@ -145,7 +145,7 @@ $$
 
 This means we are willing to accept an **8% chance** of incorrectly rejecting $$ H_0 $$ when it is actually true.
 
-## Step 3: State the Test Statistic
+#### Step 3: State the Test Statistic
 
 The test statistic for a **one-sample t-test** is given by:
 
@@ -188,24 +188,121 @@ $$
 </div>
 
 
-##### **Step 6: Compute the Test Statistic and p-value**
+#### **Step 6: Compute the Test Statistic and p-value**
  **Compute $t$-value:**
 $$
 t = \frac{148 - 150}{\frac{8}{\sqrt{15}}} =  -0.97
 $$
 
-### **Compute the p-value:**
+**Compute the p-value:**
 Using a **t-distribution table** or statistical software ('=T.DIST.2T(0.97,14)' OR '=T.DIST(-.97,14,TRUE)\*2'):
 
 $$
 p = 2 \times P(T < -.97)  = 0.35
 $$
 
-### **Step 7: Conclusion**
+#### **Step 7: Conclusion**
 - **Critical value approach**: Since **$$ t = -0.97 $$ is NOT less than $$ t_{\text{critical}} = -1.887  and is NOT greater than 1.887 $$**, we **fail to reject \( H_0 \)**.
 - **p-value approach**: Since **\( p = 0.35 > \alpha = 0.08 \)**, we **fail to reject \( H_0 \)**.
 
 At an **8% significance level**, we **do not have enough statistical evidence** to conclude that the **mean weight of apples is significantly different from 150 grams**.
+
+
+## Two-Sample (Independent) T-Test
+
+The **Two-Sample (Independent) T-Test** compares the means of two independent groups to determine if there is a significant difference between them.
+
+### Assumptions:
+1. **Independence**: Observations in both samples must be independent.
+2. **Normality**: Each sample should come from a normally distributed population.
+3. **Equal Variance (for the standard Two-Sample T-Test)**: The two groups should have roughly equal variances (**homogeneity of variance**). If this is not met, we use **Welch’s T-Test**, which does not assume equal variances.
+
+### Hypotheses:
+- **Null Hypothesis ($$ H_0 $$)**: The means of the two populations are equal.
+  $$
+  H_0: \mu_1 = \mu_2
+  $$
+- **Alternative Hypothesis ($$ H_a $$)**:
+  - **Two-tailed test**: The means are different.
+    $$
+    H_a: \mu_1 \neq \mu_2
+    $$
+  - **Left-tailed test**: The first population mean is less than the second.
+    $$
+    H_a: \mu_1 < \mu_2
+    $$
+  - **Right-tailed test**: The first population mean is greater than the second.
+    $$
+    H_a: \mu_1 > \mu_2
+    $$
+
+### Formula:
+
+#### For equal variances (Pooled T-Test):
+
+$$
+t = \frac{\bar{x}_1 - \bar{x}_2}{s_p \sqrt{\frac{1}{n_1} + \frac{1}{n_2}}}
+$$
+
+Where:
+- $$ s_p $$ = pooled standard deviation:
+
+$$
+s_p = \sqrt{\frac{(n_1 - 1)s_1^2 + (n_2 - 1)s_2^2}{n_1 + n_2 - 2}}
+$$
+
+#### For unequal variances (Welch’s T-Test):
+
+$$
+t = \frac{\bar{x}_1 - \bar{x}_2}{\sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}}
+$$
+
+---
+
+## Two-Sample (Paired) T-Test
+
+The **Paired T-Test** (also called the **Dependent T-Test**) compares two related samples, such as pre-test and post-test scores for the same subjects.
+
+### Assumptions:
+1. **Independence within pairs**: Each pair of observations is independent of other pairs.
+2. **Normality of differences**: The differences between paired values should be normally distributed.
+
+### Hypotheses:
+- **Null Hypothesis ($$ H_0 $$)**: The mean difference between paired observations is zero.
+  $$
+  H_0: \mu_d = 0
+  $$
+- **Alternative Hypothesis ($$ H_a $$)**:
+  - **Two-tailed test**: The mean difference is not zero.
+    $$
+    H_a: \mu_d \neq 0
+    $$
+  - **Left-tailed test**: The mean difference is negative.
+    $$
+    H_a: \mu_d < 0
+    $$
+  - **Right-tailed test**: The mean difference is positive.
+    $$
+    H_a: \mu_d > 0
+    $$
+
+### Formula:
+$$
+t = \frac{\bar{d}}{\frac{s_d}{\sqrt{n}}}
+$$
+Where:
+- $$ \bar{d} $$ = mean of the differences between paired samples
+- $$ s_d $$ = standard deviation of the differences
+- $$ n $$ = number of pairs
+
+### Example:
+A coach measures the sprint times of 10 athletes before and after a training program. The **average improvement** (difference) is **-0.5 seconds**, with a **standard deviation of 0.3 seconds**.
+
+$$
+t = \frac{-0.5}{\frac{0.3}{\sqrt{10}}} = \frac{-0.5}{0.095} = -5.26
+$$
+
+Using a **t-table** at \( \alpha = 0.05 \), the critical value for **df = 9** is **-2.262**. Since **-5.26 < -2.262**, we **reject \( H_0 \)**, concluding that the training significantly improved sprint times.
 
 
 
