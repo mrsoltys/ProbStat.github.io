@@ -1,7 +1,10 @@
 ---
 layout: default
 title: Guide To Hypothesis Testing
+toc: true
 ---
+
+{% include toc.html %}
 
 Guide to Hypothesis Testing
 ===========================
