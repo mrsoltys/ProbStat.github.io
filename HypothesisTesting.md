@@ -8,7 +8,9 @@ Guide to Hypothesis Testing
 ===========================
 
 Hypothesis testing is a fundamental statistical tool used to make inferences about a population based on sample data. In this class, we'll take a 7-step approach to hypothesis testing:
+
 ### Summary of the 7-Step Hypothesis Testing Process:
+
 1. **State the null and alternative hypotheses**.
 2. **Choose the significance level ($$ \alpha $$)**.
 3. **Determine the appropriate test statistic**.
