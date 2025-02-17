@@ -1,10 +1,12 @@
 ---
 layout: default
 title: Probability and Statistics Guide
-toc: false
+toc: true
 ---
+
 Intro To Statistics
 ===================
+
 Statistics helps us make sense of the world around us. Because collecting data from an entire **population** is often impractical or impossible, we typically analyze a **sample**—a smaller, representative subset of the whole.
 
 ## Population
