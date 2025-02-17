@@ -64,11 +64,11 @@ a:hover {
 
 #toc {
     position: fixed;
-    top: 100px;
-    left: 20px;
+    left: 10px;
+    top: 50px;
     width: 250px;
     background-color: #eee8d5; /* Solarized Base2 */
-    padding: 10px;
+    padding: 15px;
     border-radius: 5px;
     border-left: 4px solid #268bd2; /* Solarized Blue */
     font-size: 0.9em;
@@ -91,4 +91,5 @@ a:hover {
 
 #toc ul li a:hover {
     color: #2aa198; /* Solarized Cyan */
+    text-decoration: underline;
 }
