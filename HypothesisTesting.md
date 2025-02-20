@@ -350,14 +350,14 @@ Where:
 
 ---
 
-## **Step 4: Identify the Random Sampling Distribution (RSD)**
+#### **Step 4: Identify the Random Sampling Distribution (RSD)**
 
 - The test statistic follows a **t-distribution** with **degrees of freedom**:$$ df = n - 1 = 10 - 1 = 9 $$
 - Since the sample size is small, we assume the differences are **approximately normally distributed**.
 
 ---
 
-## **Step 5: Find the Critical Value**
+#### **Step 5: Find the Critical Value**
 
 For a **left-tailed test** at \( \alpha = 0.05 \), we find the **critical value** from a t-table:
 
@@ -373,14 +373,14 @@ $$
 
 ---
 
-## **Step 6: Compute the Test Statistic and p-value**
+#### **Step 6: Compute the Test Statistic and p-value**
 
-### **Compute $t$-value:**
+ **Compute $t$-value:**
 $$
 t = \frac{-0.5}{\frac{0.3}{\sqrt{10}}} = \frac{-0.5}{0.095} = -5.26
 $$
 
-### **Compute the p-value:**
+ **Compute the p-value:**
 Using a **t-distribution table** or statistical software:
 
 $$
@@ -396,6 +396,161 @@ $$
 
 At a **5% significance level**, we have Sufficient Statistical Evidence to Infer that the **training program improved sprint times**.
 
+
+# ANOVA: Analysis of Variance
+
+## **Introduction to ANOVA**
+Analysis of Variance (**ANOVA**) is a hypothesis-testing method used to determine whether there are **statistically significant differences between the means of three or more independent groups**.
+
+While **t-tests** compare means of two groups, **ANOVA** generalizes this concept to **multiple groups** while controlling for Type I error.
+
+### **Types of ANOVA**
+- **One-Way ANOVA**: Compares means across **one categorical independent variable** with multiple groups.
+- **Two-Way ANOVA**: Examines the effects of **two categorical independent variables** and their interaction on a dependent variable.
+- **Repeated Measures ANOVA**: Used when **the same subjects** are measured under different conditions (similar to a paired t-test but with more than two conditions).
+
+---
+## **Hypotheses in One-Way ANOVA**
+One-Way ANOVA tests whether **at least one group mean differs significantly** from the others.
+
+- **Null Hypothesis ($H_0$)**: All group means are equal.
+  $$
+  H_0: \mu_1 = \mu_2 = \mu_3 = \dots = \mu_k
+  $$
+
+- **Alternative Hypothesis ($H_a$)**: At least one group mean is different.
+  $$
+  H_a: \text{At least one } \mu \text{ differs from the others}
+  $$
+
+ANOVA **does not tell us which groups are different**, only that at least one mean differs. To determine specific differences, we perform **post-hoc tests** (e.g., Tukey's HSD test).
+
+---
+
+## **Assumptions of One-Way ANOVA**
+Before performing ANOVA, we must check the following assumptions:
+
+1. **Independence**: Observations within and across groups must be independent.
+2. **Normality**: The dependent variable is normally distributed **within each group**.
+3. **Equal Variance (Homoscedasticity)**: The groups should have similar variances (checked using Levene’s test or Bartlett’s test).
+
+If the assumptions of normality or equal variance are violated, we can:
+- Use a **non-parametric test** (e.g., Kruskal-Wallis test).
+- Apply **transformations** (e.g., log transformation) to stabilize variance.
+
+## **Example: One-Way ANOVA**
+### **Scenario**
+A **researcher** wants to test whether **three different fertilizers** lead to different **crop yields**. They randomly assign **15 plants** to three groups:  
+- **Fertilizer A** (5 plants)
+- **Fertilizer B** (5 plants)
+- **Fertilizer C** (5 plants)
+
+The **crop yields (in kg)** for each group are recorded. We will use **ANOVA** to determine if there is a **significant difference** among the three fertilizers.
+
+---
+
+#### **Step 1: State the Null and Alternative Hypotheses**
+- **Null Hypothesis ($H_0$)**: The means of all groups are equal.
+  $$
+  H_0: \mu_A = \mu_B = \mu_C
+  $$
+
+- **Alternative Hypothesis ($H_a$)**: At least one group mean is different.
+  $$
+  H_a: \text{At least one } \mu \text{ is different}
+  $$
+
+---
+
+#### **Step 2: State the Significance Level ($\alpha$)**
+
+We set our **significance level** at:
+
+$$
+\alpha = 0.05
+$$
+
+This means we are willing to accept a **5% chance** of incorrectly rejecting \( H_0 \).
+
+---
+
+#### **Step 3: State the Test Statistic**
+ANOVA uses the **F-statistic**, defined as:
+
+$$
+F = \frac{\text{Between-Group Variance}}{\text{Within-Group Variance}}
+$$
+
+Where:
+- **Between-Group Variance** measures differences **between** group means.
+- **Within-Group Variance** measures variability **within** each group.
+
+The degrees of freedom (**df**) are:
+- **Between Groups**: $$ df_1 = k - 1 $$ (where $$ k $$ is the number of groups).
+- **Within Groups**: $$ df_2 = N - k $$ (where $$ N $$ is the total sample size).
+
+---
+
+#### **Step 4: Identify the Random Sampling Distribution (RSD)**
+- The **test statistic follows an F-distribution** with $$ df_1 = k - 1 $$ and $$ df_2 = N - k $$.
+- Assumptions of ANOVA:
+  1. **Independence**: Observations are independent within and across groups.
+  2. **Normality**: The dependent variable is normally distributed within each group.
+  3. **Equal Variance** (**Homoscedasticity**): The groups have roughly equal variances.
+
+---
+
+#### **Step 5: Find the Critical Value**
+We determine the **critical value** from an **F-table** at \( \alpha = 0.05 \), using the calculated degrees of freedom:
+
+- $$ df_1 = 3 - 1 = 2 $$
+- $$ df_2 = 15 - 3 = 12 $$
+
+Using an **F-table** or statistical software:
+
+$$
+F_{\text{critical}} = 3.89
+$$
+
+We **reject $$ H_0 $$** if:
+
+$$
+F > 3.89
+$$
+
+---
+
+##### **Step 6: Compute the Test Statistic and p-value**
+### **Given Data:**
+| Group | Crop Yields (kg) |
+|-------|----------------|
+| **Fertilizer A** | 22, 24, 20, 23, 25 |
+| **Fertilizer B** | 30, 32, 31, 28, 29 |
+| **Fertilizer C** | 18, 19, 20, 17, 16 |
+
+Using statistical software (or manual calculations):
+
+<div style="text-align: center;">
+  <img src="./Figures/ANOVAex1.png" style="max-width: 85%; height: auto;">
+</div>
+
+
+- **F-statistic**:
+
+  $$
+  F = 62.90
+  $$
+
+- **p-value**: \( p = 4.36 \times 10^{-7} \)
+
+---
+
+## **Step 7: Conclusion**
+- **Critical value approach**: Since **\( F = 62.90 > 3.89 \)**, we **reject \( H_0 \)**.
+- **p-value approach**: Since **\( p = 4.36 \times 10^{-7} < \alpha = 0.05 \)**, we also **reject \( H_0 \)**.
+
+### **Final Interpretation:**
+At a **5% significance level**, we have strong statistical evidence that **at least one fertilizer leads to significantly different crop yields**.
 
 
 
