@@ -25,8 +25,6 @@ Hypothesis testing is a fundamental statistical tool used to make inferences abo
 
 The **T-Test** is commonly used to test hypotheses about population means, particularly when the sample size is small and/or the population standard deviation is unknown.
 
----
-
 ## One-Sample T-Test
 
 The **One-Sample T-Test** is used to determine whether the mean of a single sample is significantly different from a known or hypothesized population mean.
@@ -251,7 +249,6 @@ A coach measures the sprint times of **10 athletes** before and after a training
 
 The **average improvement** (mean difference) is **-0.5 seconds**, with a **standard deviation of 0.3 seconds**.
 
----
 
 #### **Step 1: State the Null and Alternative Hypotheses**
 Since we are testing whether the **training significantly improved sprint times**, we define:
@@ -268,8 +265,6 @@ Since we are testing whether the **training significantly improved sprint times*
 
 This is a **left-tailed test** since we expect the improvement (difference) to be **negative**.
 
----
-
 #### **Step 2: State the Maximum Risk of a Type I Error ($\alpha$)**
 
 We set our **significance level** at:
@@ -280,7 +275,6 @@ $$
 
 This means we are willing to accept a **5% chance** of incorrectly rejecting \( H_0 \) when it is actually true.
 
----
 
 #### **Step 3: State the Test Statistic**
 
@@ -295,14 +289,12 @@ Where:
 - $$ s_d = 0.3 $$ (standard deviation of differences)
 - $$ n = 10 $$ (number of athletes)
 
----
 
 #### **Step 4: Identify the Random Sampling Distribution (RSD)**
 
 - The test statistic follows a **t-distribution** with **degrees of freedom**:$$ df = n - 1 = 10 - 1 = 9 $$
 - Since the sample size is small, we assume the differences are **approximately normally distributed**.
 
----
 
 #### **Step 5: Find the Critical Value**
 
@@ -318,7 +310,7 @@ $$
 t < -1.833
 $$
 
----
+
 
 #### **Step 6: Compute the Test Statistic and p-value**
 
@@ -334,7 +326,6 @@ $$
 p = P(T < -5.26) \approx 0.0002
 $$
 
----
 
 ## **Step 7: Conclusion**
 - **Critical value approach**: Since **\( t = -5.26 \) is less than \( t_{\text{critical}} = -1.833 \)**, we **reject \( H_0 \)**.
@@ -392,9 +383,6 @@ $$
 t = \frac{\bar{x}_1 - \bar{x}_2}{\sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}}
 $$
 
----
-
-
 
 ## ANOVA: Analysis of Variance
 
@@ -408,7 +396,7 @@ While **t-tests** compare means of two groups, **ANOVA** generalizes this concep
 - **Two-Way ANOVA**: Examines the effects of **two categorical independent variables** and their interaction on a dependent variable.
 - **Repeated Measures ANOVA**: Used when **the same subjects** are measured under different conditions (similar to a paired t-test but with more than two conditions).
 
----
+
 ### **Hypotheses in One-Way ANOVA**
 One-Way ANOVA tests whether **at least one group mean differs significantly** from the others.
 
@@ -424,7 +412,6 @@ One-Way ANOVA tests whether **at least one group mean differs significantly** fr
 
 ANOVA **does not tell us which groups are different**, only that at least one mean differs. To determine specific differences, we perform **post-hoc tests** (e.g., Tukey's HSD test).
 
----
 
 ### **Assumptions of One-Way ANOVA**
 Before performing ANOVA, we must check the following assumptions:
@@ -446,7 +433,6 @@ A **researcher** wants to test whether **three different fertilizers** lead to d
 
 The **crop yields (in kg)** for each group are recorded. We will use **ANOVA** to determine if there is a **significant difference** among the three fertilizers.
 
----
 
 #### **Step 1: State the Null and Alternative Hypotheses**
 - **Null Hypothesis ($$H_0$$)**: The means of all groups are equal.
@@ -459,7 +445,6 @@ The **crop yields (in kg)** for each group are recorded. We will use **ANOVA** t
   H_a: \text{At least one } \mu \text{ is different}
   $$
 
----
 
 #### **Step 2: State the Significance Level ($$\alpha$$)**
 
@@ -471,7 +456,6 @@ $$
 
 This means we are willing to accept a **5% chance** of incorrectly rejecting $$ H_0 $$.
 
----
 
 #### **Step 3: State the Test Statistic**
 ANOVA uses the **F-statistic**, defined as:
@@ -488,7 +472,6 @@ The degrees of freedom (**df**) are:
 - **Between Groups**: $$ df_1 = k - 1 $$ (where $$ k $$ is the number of groups).
 - **Within Groups**: $$ df_2 = N - k $$ (where $$ N $$ is the total sample size).
 
----
 
 #### **Step 4: Identify the Random Sampling Distribution (RSD)**
 - The **test statistic follows an F-distribution** with $$ df_1 = k - 1 $$ and $$ df_2 = N - k $$.
@@ -497,7 +480,6 @@ The degrees of freedom (**df**) are:
   2. **Normality**: The dependent variable is normally distributed within each group.
   3. **Equal Variance** (**Homoscedasticity**): The groups have roughly equal variances.
 
----
 
 #### **Step 5: Find the Critical Value**
 We determine the **critical value** from an **F-table** at \( \alpha = 0.05 \), using the calculated degrees of freedom:
@@ -517,7 +499,6 @@ $$
 F > 3.89
 $$
 
----
 
 ##### **Step 6: Compute the Test Statistic and p-value**
 
@@ -543,7 +524,6 @@ Using statistical software (or manual calculations):
 
 - **p-value**: \( p = 4.36 \times 10^{-7} \)
 
----
 
 #### **Step 7: Conclusion**
 - **Critical value approach**: Since **$$ F = 62.90 > 3.89 $$**, we **reject $$ H_0 $$**.
