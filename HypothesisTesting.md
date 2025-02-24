@@ -400,12 +400,12 @@ While **t-tests** compare means of two groups, **ANOVA** generalizes this concep
 ### **Hypotheses in One-Way ANOVA**
 One-Way ANOVA tests whether **at least one group mean differs significantly** from the others.
 
-- **Null Hypothesis ($H_0$)**: All group means are equal.
+- **Null Hypothesis ($$H_0$$)**: All group means are equal.
   $$
   H_0: \mu_1 = \mu_2 = \mu_3 = \dots = \mu_k
   $$
 
-- **Alternative Hypothesis ($H_a$)**: At least one group mean is different.
+- **Alternative Hypothesis ($$H_a$$)**: At least one group mean is different.
   $$
   H_a: \text{At least one } \mu \text{ differs from the others}
   $$
