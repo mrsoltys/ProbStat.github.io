@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Guide To Hypothesis Testing
-toc: true
+toc: false
 ---
 
 Guide to Hypothesis Testing
@@ -121,24 +121,24 @@ Since **-1.976 < -1.833** and that **$$p=0.04 < \alpha =0.05 $$**, we **reject $
 ### Example (Two-Tailed T-Test):
 A fruit supplier claims that the average weight of apples in their orchard is **150 grams**. A researcher randomly samples **15 apples** and finds that the **sample mean weight** is **148 grams**, with a **sample standard deviation of 8 grams**.
 
-We want to test whether the **average weight of apples is significantly different from** 150 grams at a **significance level of \( \alpha = 0.08 \)**.
+We want to test whether the **average weight of apples is significantly different from** 150 grams at a **significance level of $$ \alpha = 0.08 $$**.
 
 #### Step 1: State the Null and Alternative Hypotheses
 We set up the hypotheses as follows:
 
-- **Null Hypothesis ($H_0$)**: The population mean is equal to 150 grams.
+- **Null Hypothesis ($$H_0$$)**: The population mean is equal to 150 grams.
   $$
   H_0: \mu = 150
   $$
   
-- **Alternative Hypothesis ($H_a$)**: The population mean is **not** equal to 150 grams.
+- **Alternative Hypothesis ($$H_a$$)**: The population mean is **not** equal to 150 grams.
   $$
   H_a: \mu \neq 150
   $$
 
 Since we are testing whether the mean **differs in either direction**, this is a **two-tailed test**.
 
-#### Step 2: State the Maximum Risk of a Type I Error ($\alpha$)
+#### Step 2: State the Maximum Risk of a Type I Error ($$\alpha$$)
 
 We set our **significance level** at:
 
@@ -165,10 +165,9 @@ Where:
 #### Step 4: Identify the Random Sampling Distribution (RSD)
 
 - The **test statistic follows a t-distribution** with **degrees of freedom** $$ df = n - 1 = 15 - 1 = 14 $$
-- Since we are **sampling from a normal distribution or using the Central Limit Theorem (CLT) for a moderately large sample**, this is an **exact test**.
 
 #### Step 5: Find the Critical Values
-For a **two-tailed test** at \( \alpha = 0.08 \), we **split the significance level** across both tails:
+For a **two-tailed test** at $$ \alpha = 0.08 $, we **split the significance level** across both tails:
 
 $$
 \frac{\alpha}{2} = 0.04
@@ -180,7 +179,7 @@ $$
 t_{\text{critical}} = \pm 1.887
 $$
 
-This means we **reject \( H_0 \) if**:
+This means we **reject $$ H_0 $$ if**:
 
 $$
 t < -1.887 \quad \text{or} \quad t > 1.887
@@ -192,75 +191,23 @@ $$
 
 
 #### **Step 6: Compute the Test Statistic and p-value**
- **Compute $t$-value:**
+ **Compute t-value:**
 $$
 t = \frac{148 - 150}{\frac{8}{\sqrt{15}}} =  -0.97
 $$
 
 **Compute the p-value:**
-Using a **t-distribution table** or statistical software ('=T.DIST.2T(0.97,14)' OR '=T.DIST(-.97,14,TRUE)\*2'):
+Using a **t-distribution table** or statistical software (`=T.DIST.2T(0.97,14)`` OR `=T.DIST(-.97,14,TRUE)\*2`):
 
 $$
 p = 2 \times P(T < -.97)  = 0.35
 $$
 
 #### **Step 7: Conclusion**
-- **Critical value approach**: Since **$$ t = -0.97 $$ is NOT less than $$ t_{\text{critical}} = -1.887  and is NOT greater than 1.887 $$**, we **fail to reject \( H_0 \)**.
-- **p-value approach**: Since **\( p = 0.35 > \alpha = 0.08 \)**, we **fail to reject \( H_0 \)**.
+- **Critical value approach**: Since **$$ t = -0.97 $$ is NOT less than $$ t_{\text{critical}} = -1.887 $$ and is NOT greater than $$ 1.887 $$**, we **fail to reject $$ H_0 $$**.
+- **p-value approach**: Since **$$ p = 0.35 > \alpha = 0.08 $$**, we **fail to reject \( H_0 \)**.
 
 At an **8% significance level**, we **do not have enough statistical evidence** to conclude that the **mean weight of apples is significantly different from 150 grams**.
-
-
-## Two-Sample (Independent) T-Test
-
-The **Two-Sample (Independent) T-Test** compares the means of two independent groups to determine if there is a significant difference between them.
-
-### Assumptions:
-1. **Independence**: Observations in both samples must be independent.
-2. **Normality**: Each sample should come from a normally distributed population.
-3. **Equal Variance (for the standard Two-Sample T-Test)**: The two groups should have roughly equal variances (**homogeneity of variance**). If this is not met, we use **Welch’s T-Test**, which does not assume equal variances.
-
-### Hypotheses:
-- **Null Hypothesis ($$ H_0 $$)**: The means of the two populations are equal.
-  $$
-  H_0: \mu_1 = \mu_2
-  $$
-- **Alternative Hypothesis ($$ H_a $$)**:
-  - **Two-tailed test**: The means are different.
-    $$
-    H_a: \mu_1 \neq \mu_2
-    $$
-  - **Left-tailed test**: The first population mean is less than the second.
-    $$
-    H_a: \mu_1 < \mu_2
-    $$
-  - **Right-tailed test**: The first population mean is greater than the second.
-    $$
-    H_a: \mu_1 > \mu_2
-    $$
-
-### Formula:
-
-#### For equal variances (Pooled T-Test):
-
-$$
-t = \frac{\bar{x}_1 - \bar{x}_2}{s_p \sqrt{\frac{1}{n_1} + \frac{1}{n_2}}}
-$$
-
-Where:
-- $$ s_p $$ = pooled standard deviation:
-
-$$
-s_p = \sqrt{\frac{(n_1 - 1)s_1^2 + (n_2 - 1)s_2^2}{n_1 + n_2 - 2}}
-$$
-
-#### For unequal variances (Welch’s T-Test):
-
-$$
-t = \frac{\bar{x}_1 - \bar{x}_2}{\sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}}
-$$
-
----
 
 ## Two-Sample (Paired) T-Test
 
@@ -359,13 +306,13 @@ Where:
 
 #### **Step 5: Find the Critical Value**
 
-For a **left-tailed test** at \( \alpha = 0.05 \), we find the **critical value** from a t-table:
+For a **left-tailed test** at $$ \alpha = 0.05 $$, we find the **critical value** from a t-table:
 
 $$
 t_{\text{critical}} = -1.833
 $$
 
-We will **reject \( H_0 \) if**:
+We will **reject $$ H_0 $$ if**:
 
 $$
 t < -1.833
@@ -396,8 +343,60 @@ $$
 
 At a **5% significance level**, we have Sufficient Statistical Evidence to Infer that the **training program improved sprint times**.
 
+## Two-Sample (Independent) T-Test
 
-# ANOVA: Analysis of Variance
+The **Two-Sample (Independent) T-Test** compares the means of two independent groups to determine if there is a significant difference between them.
+
+### Assumptions:
+1. **Independence**: Observations in both samples must be independent.
+2. **Normality**: Each sample should come from a normally distributed population.
+3. **Equal Variance (for the standard Two-Sample T-Test)**: The two groups should have roughly equal variances (**homogeneity of variance**). If this is not met, we use **Welch’s T-Test**, which does not assume equal variances.
+
+### Hypotheses:
+- **Null Hypothesis ($$ H_0 $$)**: The means of the two populations are equal.
+  $$
+  H_0: \mu_1 = \mu_2
+  $$
+- **Alternative Hypothesis ($$ H_a $$)**:
+  - **Two-tailed test**: The means are different.
+    $$
+    H_a: \mu_1 \neq \mu_2
+    $$
+  - **Left-tailed test**: The first population mean is less than the second.
+    $$
+    H_a: \mu_1 < \mu_2
+    $$
+  - **Right-tailed test**: The first population mean is greater than the second.
+    $$
+    H_a: \mu_1 > \mu_2
+    $$
+
+### Formula:
+
+#### For equal variances (Pooled T-Test):
+
+$$
+t = \frac{\bar{x}_1 - \bar{x}_2}{s_p \sqrt{\frac{1}{n_1} + \frac{1}{n_2}}}
+$$
+
+Where:
+- $$ s_p $$ = pooled standard deviation:
+
+$$
+s_p = \sqrt{\frac{(n_1 - 1)s_1^2 + (n_2 - 1)s_2^2}{n_1 + n_2 - 2}}
+$$
+
+#### For unequal variances (Welch’s T-Test):
+
+$$
+t = \frac{\bar{x}_1 - \bar{x}_2}{\sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}}
+$$
+
+---
+
+
+
+## ANOVA: Analysis of Variance
 
 ## **Introduction to ANOVA**
 Analysis of Variance (**ANOVA**) is a hypothesis-testing method used to determine whether there are **statistically significant differences between the means of three or more independent groups**.
@@ -410,7 +409,7 @@ While **t-tests** compare means of two groups, **ANOVA** generalizes this concep
 - **Repeated Measures ANOVA**: Used when **the same subjects** are measured under different conditions (similar to a paired t-test but with more than two conditions).
 
 ---
-## **Hypotheses in One-Way ANOVA**
+### **Hypotheses in One-Way ANOVA**
 One-Way ANOVA tests whether **at least one group mean differs significantly** from the others.
 
 - **Null Hypothesis ($H_0$)**: All group means are equal.
@@ -427,7 +426,7 @@ ANOVA **does not tell us which groups are different**, only that at least one me
 
 ---
 
-## **Assumptions of One-Way ANOVA**
+### **Assumptions of One-Way ANOVA**
 Before performing ANOVA, we must check the following assumptions:
 
 1. **Independence**: Observations within and across groups must be independent.
@@ -438,8 +437,8 @@ If the assumptions of normality or equal variance are violated, we can:
 - Use a **non-parametric test** (e.g., Kruskal-Wallis test).
 - Apply **transformations** (e.g., log transformation) to stabilize variance.
 
-## **Example: One-Way ANOVA**
-### **Scenario**
+### **Example: One-Way ANOVA**
+#### **Scenario**
 A **researcher** wants to test whether **three different fertilizers** lead to different **crop yields**. They randomly assign **15 plants** to three groups:  
 - **Fertilizer A** (5 plants)
 - **Fertilizer B** (5 plants)
@@ -450,19 +449,19 @@ The **crop yields (in kg)** for each group are recorded. We will use **ANOVA** t
 ---
 
 #### **Step 1: State the Null and Alternative Hypotheses**
-- **Null Hypothesis ($H_0$)**: The means of all groups are equal.
+- **Null Hypothesis ($$H_0$$)**: The means of all groups are equal.
   $$
   H_0: \mu_A = \mu_B = \mu_C
   $$
 
-- **Alternative Hypothesis ($H_a$)**: At least one group mean is different.
+- **Alternative Hypothesis ($$H_a$$)**: At least one group mean is different.
   $$
   H_a: \text{At least one } \mu \text{ is different}
   $$
 
 ---
 
-#### **Step 2: State the Significance Level ($\alpha$)**
+#### **Step 2: State the Significance Level ($$\alpha$$)**
 
 We set our **significance level** at:
 
@@ -470,7 +469,7 @@ $$
 \alpha = 0.05
 $$
 
-This means we are willing to accept a **5% chance** of incorrectly rejecting \( H_0 \).
+This means we are willing to accept a **5% chance** of incorrectly rejecting $$ H_0 $$.
 
 ---
 
@@ -521,7 +520,8 @@ $$
 ---
 
 ##### **Step 6: Compute the Test Statistic and p-value**
-### **Given Data:**
+
+**Given Data:**
 | Group | Crop Yields (kg) |
 |-------|----------------|
 | **Fertilizer A** | 22, 24, 20, 23, 25 |
@@ -545,11 +545,11 @@ Using statistical software (or manual calculations):
 
 ---
 
-## **Step 7: Conclusion**
-- **Critical value approach**: Since **\( F = 62.90 > 3.89 \)**, we **reject \( H_0 \)**.
-- **p-value approach**: Since **\( p = 4.36 \times 10^{-7} < \alpha = 0.05 \)**, we also **reject \( H_0 \)**.
+#### **Step 7: Conclusion**
+- **Critical value approach**: Since **$$ F = 62.90 > 3.89 $$**, we **reject $$ H_0 $$**.
+- **p-value approach**: Since **$$ p = 4.36 \times 10^{-7} < \alpha = 0.05 $$**, we also **reject $$ H_0 $$**.
 
-### **Final Interpretation:**
+ **Final Interpretation:**
 At a **5% significance level**, we have strong statistical evidence that **at least one fertilizer leads to significantly different crop yields**.
 
 
