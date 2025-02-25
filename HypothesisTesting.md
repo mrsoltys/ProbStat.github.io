@@ -3,6 +3,8 @@ layout: default
 title: Guide To Hypothesis Testing
 toc: true
 ---
+* tesst
+{:toc}
 
 # Guide to Hypothesis Testing
 
@@ -17,7 +19,6 @@ Hypothesis testing is a fundamental statistical tool used to make inferences abo
 5. **Find the critical value** or decide to use a **p-value approach**.
 6. **Perform the calculations** for the test statistic and/or p-value.
 7. **Draw a conclusion** based on the comparison of the test statistic with the critical value or the p-value with \( \alpha \). Write an appropriate "We Have Sufficient Statistical Evidence To Infer That..." Statement
-
 
 
 # The T-Test (Location)
