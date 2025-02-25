@@ -10,7 +10,7 @@ toc: true
 
 Hypothesis testing is a fundamental statistical tool used to make inferences about a population based on sample data. In this class, we'll take a 7-step approach to hypothesis testing:
 
-### Summary of the 7-Step Hypothesis Testing Process:
+## Summary of the 7-Step Hypothesis Testing Process:
 
 1. **State the null and alternative hypotheses**.
 2. **Choose the significance level ($$ \alpha $$)**.
@@ -327,7 +327,7 @@ p = P(T < -5.26) \approx 0.0002
 $$
 
 
-## **Step 7: Conclusion**
+#### **Step 7: Conclusion**
 - **Critical value approach**: Since **\( t = -5.26 \) is less than \( t_{\text{critical}} = -1.833 \)**, we **reject \( H_0 \)**.
 - **p-value approach**: Since **\( p = 0.0002 < \alpha = 0.05 \)**, we also **reject \( H_0 \)**.
 
@@ -384,7 +384,7 @@ t = \frac{\bar{x}_1 - \bar{x}_2}{\sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}}
 $$
 
 
-## ANOVA: Analysis of Variance
+# ANOVA: Analysis of Variance
 
 ## **Introduction to ANOVA**
 Analysis of Variance (**ANOVA**) is a hypothesis-testing method used to determine whether there are **statistically significant differences between the means of three or more independent groups**.
@@ -426,12 +426,22 @@ If the assumptions of normality or equal variance are violated, we can:
 
 ### **Example: One-Way ANOVA**
 #### **Scenario**
-A **researcher** wants to test whether **three different fertilizers** lead to different **crop yields**. They randomly assign **15 plants** to three groups:  
-- **Fertilizer A** (5 plants)
-- **Fertilizer B** (5 plants)
-- **Fertilizer C** (5 plants)
+A researcher wants to determine if three different fertilizers result in different crop yields. They randomly assign 15 plants to three groups (5 plants per group):
 
-The **crop yields (in kg)** for each group are recorded. We will use **ANOVA** to determine if there is a **significant difference** among the three fertilizers.
+- **Fertilizer A**
+- **Fertilizer B**
+- **Fertilizer C**
+
+The crop yields (kg) for each group are:
+
+| Group | Crop Yields (kg) |
+|-------|-------------------|
+| **Fertilizer A** | 20, 21, 19, 22, 20 |
+| **Fertilizer B** | 22, 23, 21, 24, 22 |
+| **Fertilizer C** | 21, 20, 19, 22, 21 |
+
+We want to see if there's a statistically significant difference among these groups at a 5% significance level.
+
 
 
 #### **Step 1: State the Null and Alternative Hypotheses**
@@ -502,12 +512,6 @@ $$
 
 ##### **Step 6: Compute the Test Statistic and p-value**
 
-**Given Data:**
-| Group | Crop Yields (kg) |
-|-------|----------------|
-| **Fertilizer A** | 22, 24, 20, 23, 25 |
-| **Fertilizer B** | 30, 32, 31, 28, 29 |
-| **Fertilizer C** | 18, 19, 20, 17, 16 |
 
 Using statistical software (or manual calculations):
 
@@ -519,18 +523,32 @@ Using statistical software (or manual calculations):
 - **F-statistic**:
 
   $$
-  F = 62.90
+  F = 4.7
   $$
 
-- **p-value**: \( p = 4.36 \times 10^{-7} \)
+- **p-value**: $$ p = 0.032 $$
 
 
 #### **Step 7: Conclusion**
-- **Critical value approach**: Since **$$ F = 62.90 > 3.89 $$**, we **reject $$ H_0 $$**.
-- **p-value approach**: Since **$$ p = 4.36 \times 10^{-7} < \alpha = 0.05 $$**, we also **reject $$ H_0 $$**.
+- **Critical value approach**: Since **$$ F > 3.89 $$**, we **reject $$ H_0 $$**.
+- **p-value approach**: Since **$$ p < \alpha = 0.05 $$**, we also **reject $$ H_0 $$**.
 
  **Final Interpretation:**
 At a **5% significance level**, we have strong statistical evidence that **at least one fertilizer leads to significantly different crop yields**.
 
+## Bonferroni Post-hoc Analysis
+When we run multiple statistical t-tests simultaneously, each individual test has a chance of incorrectly finding a significant difference (Type I error). Although each test independently might have a small error probability (e.g., 5%), the overall chance of making at least one incorrect conclusion across multiple tests grows larger as more comparisons are made. This cumulative risk is called the family-wise error rate. Without correction, the likelihood of mistakenly concluding at least one significant difference increases substantially with each additional test performed.
 
+The Bonferroni correction addresses this issue by adjusting the threshold of significance (or equivalently, the p-values) to control the overall risk of committing a Type I error across all comparisons. Specifically, the Bonferroni procedure divides the chosen significance level ($$\alpha$$) by the number of tests performed, thus ensuring the overall probability of a Type I error remains at or below the desired significance level.
+
+Mathematically, the adjusted significance level for each individual test is:
+
+$$\alpha_{adjusted}=\frac{\alpha_{raw}}{number of comparisons}$$
+ 
+Equivalently, individual p-values are adjusted by multiplying by the number of comparisons:
+
+$$P_{adjusted}=(P_{raw})\times(number of comparisons)$$
+
+#### Example
+For the fertilizer example above, we can run multiple 2-tailed t-tests to identify significance between groups. 
 
