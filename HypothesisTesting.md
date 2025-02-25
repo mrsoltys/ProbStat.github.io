@@ -437,8 +437,8 @@ The crop yields (kg) for each group are:
 | Group | Crop Yields (kg) |
 |-------|-------------------|
 | **Fertilizer A** | 20, 21, 19, 22, 20 |
-| **Fertilizer B** | 22, 23, 21, 24, 22 |
-| **Fertilizer C** | 21, 20, 19, 22, 21 |
+| **Fertilizer B** | 23, 24, 22, 25, 23 |
+| **Fertilizer C** | 22, 21, 20, 23, 22 |
 
 We want to see if there's a statistically significant difference among these groups at a 5% significance level.
 
@@ -523,10 +523,10 @@ Using statistical software (or manual calculations):
 - **F-statistic**:
 
   $$
-  F = 4.7
+  F = 8.77
   $$
 
-- **p-value**: $$ p = 0.032 $$
+- **p-value**: $$ p = 0.0045$$
 
 
 #### **Step 7: Conclusion**
@@ -534,10 +534,10 @@ Using statistical software (or manual calculations):
 - **p-value approach**: Since **$$ p < \alpha = 0.05 $$**, we also **reject $$ H_0 $$**.
 
  **Final Interpretation:**
-At a **5% significance level**, we have strong statistical evidence that **at least one fertilizer leads to significantly different crop yields**.
+At a **5% significance level**, we have strong statistical evidence that **at least one fertilizer leads to significantly different crop yields**. To find out which one... we must conduct a Post-hoc analysis.
 
 ## Bonferroni Post-hoc Analysis
-When we run multiple statistical t-tests simultaneously, each individual test has a chance of incorrectly finding a significant difference (Type I error). Although each test independently might have a small error probability (e.g., 5%), the overall chance of making at least one incorrect conclusion across multiple tests grows larger as more comparisons are made. This cumulative risk is called the family-wise error rate. Without correction, the likelihood of mistakenly concluding at least one significant difference increases substantially with each additional test performed.
+When we run multiple statistical t-tests simultaneously, each individual test has a chance of incorrectly finding a significant difference (Type I error). Although each test independently might have a small error probability (e.g., 5%), the overall chance of making at least one incorrect conclusion across multiple tests grows larger as more comparisons are made. This cumulative risk is called the **family-wise error rate**. Without correction, the likelihood of mistakenly concluding at least one significant difference increases substantially with each additional test performed.
 
 The Bonferroni correction addresses this issue by adjusting the threshold of significance (or equivalently, the p-values) to control the overall risk of committing a Type I error across all comparisons. Specifically, the Bonferroni procedure divides the chosen significance level ($$\alpha$$) by the number of tests performed, thus ensuring the overall probability of a Type I error remains at or below the desired significance level.
 
@@ -545,10 +545,27 @@ Mathematically, the adjusted significance level for each individual test is:
 
 $$\alpha_{adjusted}=\frac{\alpha_{raw}}{number of comparisons}$$
  
-Equivalently, individual p-values are adjusted by multiplying by the number of comparisons:
+Equivalently/alternatively, individual p-values are adjusted by multiplying by the number of comparisons:
 
 $$P_{adjusted}=(P_{raw})\times(number of comparisons)$$
 
 #### Example
 For the fertilizer example above, we can run multiple 2-tailed t-tests to identify significance between groups. 
+
+| Comparison | Raw p-value | Adjusted p-value | Significant? |
+|------------|-------------|------------------|--------------|
+| **A vs B** | 0.0032      | 0.0095           | Yes ✅       |
+| **A vs C** | 0.1347      | 0.4040           | No ❌        |
+| **B vs C** | 0.0372      | 0.1115           | No ❌        |
+
+**Interpretation:**
+
+* Fertilizer B significantly outperforms Fertilizer A.
+* Fertilizer C is not significantly different from either A or B.
+
+A box plot is a helpful figure that can illustrate these conclusions. 
+
+<div style="text-align: center;">
+  <img src="./Figures/boxPlotFert.png" style="max-width: 85%; height: auto;">
+</div>
 
