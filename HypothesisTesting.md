@@ -1,11 +1,10 @@
 ---
 layout: default
 title: Guide To Hypothesis Testing
-toc: false
+toc: true
 ---
 
-Guide to Hypothesis Testing
-===========================
+# Guide to Hypothesis Testing
 
 Hypothesis testing is a fundamental statistical tool used to make inferences about a population based on sample data. In this class, we'll take a 7-step approach to hypothesis testing:
 
@@ -400,7 +399,7 @@ While **t-tests** compare means of two groups, **ANOVA** generalizes this concep
 ### **Hypotheses in One-Way ANOVA**
 One-Way ANOVA tests whether **at least one group mean differs significantly** from the others.
 
-- **Null Hypothesis ($$H_0$$)**: All group means are equal.
+- **Null Hypothesis ($$H_0$ $)**: All group means are equal.
   $$
   H_0: \mu_1 = \mu_2 = \mu_3 = \dots = \mu_k
   $$
