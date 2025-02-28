@@ -18,8 +18,8 @@ nav {
     left: 0;
     z-index: 1000;
 }
-@media screen and (max-width: 800px) {
-    nav, nav ul {
+@media max-width: 800px) {
+    nav {
         display: none;
     }
 }
