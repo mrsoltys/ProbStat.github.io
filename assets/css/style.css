@@ -41,7 +41,7 @@ nav ul li a:hover {
     color: #268bd2; /* Solarized Blue */
 }
 
-@media (max-width: 800px) {
+@media screen and (max-width: 800px) {
     nav {
         display: none;
         background-color: red;
