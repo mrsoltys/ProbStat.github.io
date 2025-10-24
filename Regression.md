@@ -66,3 +66,56 @@ where:
 
 ## Conclusion
 Simple linear regression provides a powerful tool for understanding relationships between variables. Key metrics such as \( R^2 \), p-values, and ANOVA results help assess model quality and significance. Analyzing residuals ensures that assumptions are met and helps refine model accuracy. Understanding these outputs enables informed decision-making based on data trends.
+
+## Logistic (Binomial) Regression
+
+### Introduction
+
+While linear regression models the relationship between continuous dependent and independent variables, **logistic regression** is employed when the dependent variable is binary (e.g., success/failure, yes/no). This method estimates the probability that a given input point belongs to a particular category.
+
+### The Logistic Function
+
+At the heart of logistic regression is the logistic function (also known as the sigmoid function), which maps any real-valued number into the (0, 1) interval, making it suitable for probability estimation:
+
+$$
+\sigma(z) = \frac{1}{1 + e^{-z}}
+$$
+
+In the context of logistic regression:
+
+$$
+z = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \dots + \beta_n x_n
+$$
+
+Here:
+- $$ \beta_0 $$ is the intercept.
+- $$ \beta_1, \beta_2, \dots, \beta_n $$ are the coefficients for the independent variables $$ x_1, x_2, \dots, x_n $$.
+
+### Model Interpretation
+
+The output of the logistic function represents the probability of the dependent variable equaling 1 (e.g., success). To interpret the relationship between the independent variables and this probability, we often use the **odds ratio**:
+
+$$
+\text{Odds} = \frac{P(y=1)}{1 - P(y=1)}
+$$
+
+Taking the natural logarithm of the odds gives the **log-odds** or **logit**:
+
+$$
+\text{logit}(P(y=1)) = \ln\left(\frac{P(y=1)}{1 - P(y=1)}\right) = \beta_0 + \beta_1 x_1 + \dots + \beta_n x_n
+$$
+
+This linear relationship allows us to interpret $$ \beta_i $$ as the change in the log-odds for a one-unit change in $$ x_i $$.
+
+### Assumptions of Logistic Regression
+
+When using logistic regression, it's important to consider the following assumptions:
+
+1. **Binary Dependent Variable**: The outcome should be dichotomous.
+2. **Independence of Observations**: Each observation should be independent of others.
+3. **Linearity of Independent Variables and Logit Transformation**: While the model doesn't assume a linear relationship between the independent variables and the outcome, it assumes a linear relationship between the independent variables and the logit of the outcome.
+4. **No Multicollinearity**: Independent variables should not be too highly correlated with each other.
+5. **Large Sample Size**: Logistic regression requires a sufficiently large sample size to provide reliable results.
+
+Violations of these assumptions can lead to unreliable or invalid results.
+
