@@ -1,0 +1,97 @@
+/* Solarized Theme */
+body {
+    background-color: #eee8d5; /* Base2 */
+    color: #073642; /* Base02 */
+    font-family: "Arial", sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+/* Navigation Menu */
+nav {
+    background-color: #073642; /* Base02 */
+    padding: 10px;
+    position: static;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #eee8d5; /* Base2 */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    color: #268bd2; /* Solarized Blue */
+}
+
+
+
+/* Header Spacing (to prevent content being hidden under fixed nav) */
+h2, h3, h4 {
+    margin-top: 80px; 
+}
+
+/* Main Content */
+main {
+    max-width: 800px;
+    margin: 100px auto 20px;
+    padding: 20px;
+}
+
+/* Links */
+a {
+    color: #268bd2;
+    text-decoration: none;
+}
+a:hover {
+    color: #2aa198; /* Solarized Cyan */
+}
+
+#toc {
+    position: fixed;
+    left: 10px;
+    top: 50px;
+    width: 250px;
+    background-color: #eee8d5; /* Solarized Base2 */
+    padding: 15px;
+    border-radius: 5px;
+    border-left: 4px solid #268bd2; /* Solarized Blue */
+    font-size: 0.9em;
+}
+
+#toc h3 {
+    margin-top: 0;
+    color: #073642; /* Solarized Base02 */
+}
+
+#toc ul {
+    list-style: none;
+    padding-left: 10px;
+}
+
+#toc ul li a {
+    text-decoration: none;
+    color: #268bd2; /* Solarized Blue */
+}
+
+#toc ul li a:hover {
+    color: #2aa198; /* Solarized Cyan */
+    text-decoration: underline;
+}

@@ -2,13 +2,29 @@
 <html>
   <head>
     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ page.title }}</title>
+    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+    <script src=”https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <!-- MathJax -->
+  <script type="text/javascript" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
   </head>
   <body>
+    <script src="{{ '/assets/js/script.js' | relative_url }}"></script>
     {% include navigation.html %}
+    {% if page.toc %}
+      <nav id="toc">
+        <h3>Table of Contents</h3>
+        <ul>
+        {% include toc.html %}
+        </ul>
+      </nav>
+    {% endif %}
+    <main>
     {{ content }}
+  </main>main>
   </body>
 </html>
 
-<script src=”https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-<script id=”MathJax-script” async src=”https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
